@@ -50,4 +50,5 @@ geth --datadir node1/ account new
 #use the passwort that you created correctly
 
 #start up a node that runs with a rpc on http://localhost:8540
+
 ./start-node_validating.sh
