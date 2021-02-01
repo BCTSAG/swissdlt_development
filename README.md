@@ -1,8 +1,12 @@
 # swissdlt_development
 
 *****************************
-#How to install a full node
+#How to install a full node on Ubuntu 20.4
 *****************************
+sudo apt-get install ntpdate
+
+sudo ntpdate -s time.nist.gov
+
 sudo add-apt-repository -y ppa:ethereum/ethereum
 
 sudo apt-get update
@@ -18,6 +22,8 @@ mkdir node1
 geth --datadir node1/ account new
 
 #send the address that is created to BCTS 
+
+geth --datadir node1/ init swissdlt.json
 
 #start up a node that runs with a rpc on http://localhost:8540
 
