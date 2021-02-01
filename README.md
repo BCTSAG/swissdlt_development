@@ -17,7 +17,9 @@ sudo apt-get install ethereum
 
 git clone https://github.com/BCTSAG/swissdlt_development
 
-cd swissdlt_development
+mv swissdlt_development swissdlt
+
+cd swissdlt
 
 mkdir node1
 
@@ -47,9 +49,9 @@ geth --datadir node1/ init swissdlt.json
 # screen -S node1 geth --datadir node1/ --syncmode 'full' --port 30311 --rpc --rpcaddr 'http://127.0.0.1' --rpccorsdomain "*" --rpcport 8540 --rpcapi 'personal,eth,net,web3,txpool,miner'  --networkid 99 --gasprice '1' -unlock 'ACCOUNTADDRESSwithoutTHE_0x' --password node1/passwort.txt --mine --allow-insecure-unlock 
 #you could put this in a startup script eg. ./start-node_validating.sh
 
-#make sure health_check.sh is in crontab eg like using crontab -e and adding these two lines
-@reboot ~/swissdlt/health_check.sh
-*/1 * * * * ~/swissdlt/health_check.sh
+#make sure health_check.sh is in crontab eg like using crontab -e and adding these two lines and uncommenting them
+# @reboot ~/swissdlt/health_check.sh
+# */1 * * * * ~/swissdlt/health_check.sh
 
 
 
