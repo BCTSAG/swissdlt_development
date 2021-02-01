@@ -3,6 +3,8 @@
 *****************************
 # How to install a full node on Ubuntu 20.4
 *****************************
+sudo apt install git
+
 sudo apt-get install screen
 
 sudo apt-get install ntpdate
@@ -20,8 +22,6 @@ git clone https://github.com/BCTSAG/swissdlt_development
 mv swissdlt_development swissdlt
 
 cd swissdlt
-
-mkdir node1
 
 geth --datadir node1/ account new
 
