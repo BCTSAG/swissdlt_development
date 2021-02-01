@@ -1,6 +1,7 @@
 # swissdlt_development
 
-How to install a full node
+*****************************
+#How to install a full node
 *****************************
 sudo add-apt-repository -y ppa:ethereum/ethereum
 
@@ -23,7 +24,8 @@ geth --datadir node1/ account new
 ./start-node.sh
 
 
-How to install a validating node
+*****************************
+#How to install a validating node
 *********************************
 
 sudo add-apt-repository -y ppa:ethereum/ethereum
