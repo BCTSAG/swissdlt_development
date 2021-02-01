@@ -1,7 +1,7 @@
 # swissdlt_development
 
 *****************************
-#How to install a full node on Ubuntu 20.4
+# How to install a full node on Ubuntu 20.4
 *****************************
 sudo apt-get install screen
 
@@ -35,7 +35,7 @@ geth --datadir node1/ init swissdlt.json
 
 
 *****************************
-#How to install a validating node
+# How to install a validating node
 *********************************
 
 #like above but after creating the address:
@@ -46,12 +46,12 @@ geth --datadir node1/ init swissdlt.json
 
 #add the adress to the start-validating-node.sh script
 #use the passwort that you created correctly with unlocking either via geth --unlock <YOUR_ACCOUNT_ADDRESS> --password <YOUR_PASSWORD> or, and this is NOT RECOMMENDED
-# screen -S node1 geth --datadir node1/ --syncmode 'full' --port 30311 --rpc --rpcaddr 'http://127.0.0.1' --rpccorsdomain "*" --rpcport 8540 --rpcapi 'personal,eth,net,web3,txpool,miner'  --networkid 99 --gasprice '1' -unlock 'ACCOUNTADDRESSwithoutTHE_0x' --password node1/passwort.txt --mine --allow-insecure-unlock 
+#screen -S node1 geth --datadir node1/ --syncmode 'full' --port 30311 --rpc --rpcaddr 'http://127.0.0.1' --rpccorsdomain "*" --rpcport 8540 --rpcapi 'personal,eth,net,web3,txpool,miner'  --networkid 99 --gasprice '1' -unlock 'ACCOUNTADDRESSwithoutTHE_0x' --password node1/passwort.txt --mine --allow-insecure-unlock 
 #you could put this in a startup script eg. ./start-node_validating.sh
 
 #make sure health_check.sh is in crontab eg like using crontab -e and adding these two lines and uncommenting them
-# @reboot ~/swissdlt/health_check.sh
-# */1 * * * * ~/swissdlt/health_check.sh
+#@reboot ~/swissdlt/health_check.sh
+#*/1 * * * * ~/swissdlt/health_check.sh
 
 
 
