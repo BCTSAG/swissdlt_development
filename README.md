@@ -3,6 +3,8 @@
 *****************************
 #How to install a full node on Ubuntu 20.4
 *****************************
+sudo apt-get install screen
+
 sudo apt-get install ntpdate
 
 sudo ntpdate -s time.nist.gov
@@ -34,27 +36,20 @@ geth --datadir node1/ init swissdlt.json
 #How to install a validating node
 *********************************
 
-sudo add-apt-repository -y ppa:ethereum/ethereum
-
-sudo apt-get update
-
-sudo apt-get install ethereum
-
-git clone https://github.com/BCTSAG/swissdlt_development
-
-cd swissdlt_development
-
-mkdir node1
-
-geth --datadir node1/ account new
-
+#like above but after creating the address:
 #send the address that is created to BCTS 
+#send the enode-info that is created to BCTC eg using geth attach node1/geth.ipc and then >admin.nodeInfo and send the output to BCTS
 #BCTS will send out a request to all node validators to add you
-#wait for confirmation
+#wait for confirmation until all validators have added you
 
 #add the adress to the start-validating-node.sh script
-#use the passwort that you created correctly
+#use the passwort that you created correctly with unlocking either via geth --unlock <YOUR_ACCOUNT_ADDRESS> --password <YOUR_PASSWORD> or, and this is NOT RECOMMENDED
+# screen -S node1 geth --datadir node1/ --syncmode 'full' --port 30311 --rpc --rpcaddr 'http://127.0.0.1' --rpccorsdomain "*" --rpcport 8540 --rpcapi 'personal,eth,net,web3,txpool,miner'  --networkid 99 --gasprice '1' -unlock 'ACCOUNTADDRESSwithoutTHE_0x' --password node1/passwort.txt --mine --allow-insecure-unlock 
+#you could put this in a startup script eg. ./start-node_validating.sh
 
-#start up a node that runs with a rpc on http://localhost:8540
+#make sure health_check.sh is in crontab eg like using crontab -e and adding these two lines
+@reboot ~/swissdlt/health_check.sh
+*/1 * * * * ~/swissdlt/health_check.sh
 
-./start-node_validating.sh
+
+
