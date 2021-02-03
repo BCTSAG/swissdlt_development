@@ -52,7 +52,7 @@ geth --datadir node1/ init swissdlt.json
 
 #use the passwort that you created correctly with unlocking either via geth --unlock <YOUR_ACCOUNT_ADDRESS> --password <YOUR_PASSWORD> or, and this is NOT RECOMMENDED
 
-#screen -S node1 geth --datadir node1/ --syncmode 'full' --port 30311 --rpc --rpcaddr 'http://127.0.0.1' --rpccorsdomain "*" --rpcport 8540 --rpcapi 'personal,eth,net,web3,txpool,miner'  --networkid 99 --gasprice '1' -unlock 'ACCOUNTADDRESSwithoutTHE_0x' --password node1/passwort.txt --mine --allow-insecure-unlock 
+#screen -S node1 geth --datadir node1/ --syncmode 'full' --port 30311 --rpc --rpcaddr 'localhost' --rpccorsdomain "*" --rpcport 8540 --rpcapi 'personal,eth,net,web3,txpool,miner'  --networkid 99 --gasprice '1' -unlock 'ACCOUNTADDRESSwithoutTHE_0x' --password node1/passwort.txt --mine --allow-insecure-unlock 
 
 #you could put this screen command in a startup script eg. ./start-node_validating.sh 
 
