@@ -80,3 +80,9 @@ add these two lines and save
 `geth attach node1/geth.ipc`
 
 for a full list of commands check https://geth.ethereum.org/docs/rpc/server
+
+*****************************
+# accounts
+*********************************
+
+please backup up your pwd for your wallet, also backup the file: ~/swissdlt/node1/keystore/UTC-.........json you will need that to restore access to the validator, also think about intercompany access policy.
