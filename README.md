@@ -77,6 +77,6 @@ add these two lines and save
 # Java console
 *********************************
 
-'geth attach node1/geth.ipc'
+`geth attach node1/geth.ipc`
 
 for a full list of commands check https://geth.ethereum.org/docs/rpc/server
