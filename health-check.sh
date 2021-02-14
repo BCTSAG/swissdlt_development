@@ -4,6 +4,7 @@ if (ps -ef | grep -i node1 | grep -v grep) ; then
 #    echo 'Node1 is running '$NOW''
 #    uncomment the next line for testing purposes
 #    echo 'Node1 is running '$NOW'' >> ~/swissdlt/servercheck.txt
+sleep 1
 else
 #please choose if you want to mine or not uncomment one of the following lines
 cd ~/swissdlt/
