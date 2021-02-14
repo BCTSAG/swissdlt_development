@@ -73,4 +73,10 @@ add these two lines and save
 */1 * * * * ~/swissdlt/health-check.sh
 ```
 
+*****************************
+# Java console
+*********************************
 
+'geth attach node1/geth.ipc'
+
+for a full list of commands check https://geth.ethereum.org/docs/rpc/server
