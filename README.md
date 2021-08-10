@@ -1,4 +1,6 @@
 # swissdlt_development
+blockexplorer https://swissdlt.appswithlove.net/
+or via rpc.operal.club and ID 999 http://blazor.nethereum.com/
 
 *****************************
 # How to install a full node on Ubuntu 20.4
